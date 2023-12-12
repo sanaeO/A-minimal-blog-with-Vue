@@ -1,0 +1,63 @@
+  // Fonts
+  @font-face {
+    font-family: 'Graphik';
+    font-weight: 700; /* Bold */
+    src: url('@/assets/fonts/Graphik-Bold-Trial.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Graphik';
+    font-weight: 300; /* Light */
+    src: url('@/assets/fonts/Graphik-Light-Trial.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Graphik';
+    font-weight: 600; /* semiBold */
+    src: url('@/assets/fonts/Graphik-Semibold-Trial.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Graphik';
+    font-weight: 500; /* medium */
+    src: url('@/assets/fonts/Graphik-Medium-Trial.otf') format('opentype');
+  }
+
+// Variables
+$grayBackground : #F2F4F7;
+$gradient:linear-gradient(97deg, #C41740 4.8%, #EA9C28 100%);
+
+// Style
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration:none;
+}
+body {
+    font-family: 'Graphik', sans-serif;
+    font-weight: 500;
+}
+// container
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Media Screen  */
+  @media (min-width: 767px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 991px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
