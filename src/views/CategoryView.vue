@@ -30,7 +30,7 @@ export default {
     components : {SinglePost , LoadingVue},
     props:{name:String, posts:Array , error:String},
     setup(props) {
-        const postsCat = ref([])
+        const postsCat = ref(props.posts.filter(post => post.category === props.name))
         watch(()=> props.name, ()=>{
         postsCat.value = props.posts.filter((post)=> post.category == props.name)
     })

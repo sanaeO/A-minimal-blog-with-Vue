@@ -6,11 +6,12 @@
                 {{ getDate(post.publishedAt) }} . <span>{{ post.category }}</span>
             </p>
         </div>
-        <div class="content">
+        <div class="content" v-if="post">
             <img :src="post.thumbnail" alt="post's image" />
            <p>{{ post.content }}</p>
            <img :src="post.image" alt="post's image" />
         </div>
+        <div v-else><LoadingVue/></div>
     </div>
 </template>
 <script>
@@ -18,8 +19,9 @@
 // import {getPost} from "@/composables/getPost"
 import {getDate} from "@/helpers/getDate"
 import { ref } from "vue"
-
+import LoadingVue from '@/components/Loading.vue'
 export default {
+    components :{LoadingVue},
     props : ['id'],
     setup(props) {
 
@@ -62,7 +64,7 @@ export default {
             background: linear-gradient(97deg, #C41740 4.8%, #EA9C28 100%);
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent; /* Hide the text color */
+            color: transparent;
             text-align: center;
         }
         p{
