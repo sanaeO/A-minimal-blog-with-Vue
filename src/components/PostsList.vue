@@ -5,7 +5,7 @@
           <template v-for="(category, index) in categories" :key="index">
             <div v-if="index === 0" class="first-cat">
               <h2>{{ category }}</h2>
-              <span @click="toggleShowAll()">View all</span>
+              <span @click="toggleShowAll()" class="show">View all</span>
             </div>
             <h2 v-else>{{ category }}</h2>
             <template v-for="post in filteredData(category).slice(0, 3)" :key="post.id">
@@ -14,6 +14,10 @@
           </template>
         </template>
         <template v-else>
+          <div class="first-cat">
+              <h2>All Posts</h2>
+              <span @click="toggleShowAll()" class="show">show Less</span>
+            </div>
             <template v-for="post in posts" :key="post.id">
               <SinglePostVue :post="post" />
             </template>
@@ -61,14 +65,14 @@ section{
     .first-cat{
         display: flex;
         justify-content: space-between;
-        span{
+    }
+    .show{
             background: white;
             border-radius: 8px;
             border: 1px solid #eee;
             height: fit-content;
             padding: 5px;
             cursor: pointer;
-        }
-    }
+      }
 }
 </style>
